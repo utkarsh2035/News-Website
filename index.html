@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuzzScope</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 h-screen w-screen m-0 p-0 box-border  text-sky-400 cursor-pointer overflow-x-hidden scroll-smooth">
+    <div class="h-full w-full" id="main">
+        <div class="cursor h-3 w-3 rounded-full bg-sky-400 fixed top-0 left-0 z-20 boxShadow"></div>
+        
+        <nav class="h-20 w-full bg-slate-900 flex justify-between items-center fixed backdrop-blur-md font-sans z-10">
+            <div id="news-image" class="h-16 overflow-hidden pl-20">
+                <img src="./newsLogo.jpeg" class="object-cover h-full w-full aspect-auto object-center rounded-lg" onclick="reload()">
+            </div>
+            <div class="items flex justify-between items-center gap-10 text-lg">
+                <p id="Technology" onclick="fetchNews('Technology');checkClass('Technology')">Technology</p>
+                <p id="Finance" onclick="fetchNews('Finance'); checkClass('Finance')">Finance</p>
+                <p id="Politics" onclick="fetchNews('Politics'); checkClass('Politics')">Politics</p>
+                <p class="" id="Business" onclick="fetchNews('Business'); checkClass('Business')" >Business</p>
+                <p id="Health" onclick="fetchNews('Health'); checkClass('Health')">Health</p>
+            </div>
+            <div class="searchbarflex pr-20">
+                <input type="search" name="search" id="searchbar" class="border-2 border-sky-400 w-64 rounded-lg pt-1 pl-2 pr-2 pb-1 font-light bg-transparent mr-4" placeholder="e.g. Science">
+                <button type="button" id="search-btn" class=" border-2 border-sky-400 pb-1 pt-1 pl-2 pr-2 rounded-lg bg-sky-400 text-slate-950 font-bold">Search</button>
+            </div>
+
+        </nav>
+
+        <div class="container h-full w-full  flex flex-wrap flex-shrink-0 pt-20"></div>
+
+        <template class="news-card">
+            <div class="image-box h-full w-96 bg-slate-900/10 backdrop-blur-sm ml-20 mt-16 flex flex-col gap-4">
+                <div class="h-60 overflow-hidden">
+                    <img src="./newsLogo.jpeg" class="card-image object-cover h-full w-full aspect-auto">
+                </div>
+                <div class="ml-4 mr-4">
+                    <h1 class="card-title font-sans font-bold text-3xl text-wrap"></h1>
+                </div>
+                <div class="ml-4 mr-4 text-sm text-wrap font-light">
+                    <p class="card-info"></p>
+                </div>
+                <div class="text-wrap ml-4 mr-4 text-lg font-normal">
+                    <p class="news-para"></p>
+                </div>
+            </div>
+        </template>
+                
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+    <script src="gsap.js"></script>
+</body>
+</html>
