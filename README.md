@@ -20,11 +20,12 @@ Get the latest tech news in one place with BuzzScope Tech News! This site curate
 *  Responsive Design: Ensures the website looks great on all devices.
 
  ## Technologies Used
- * **HTML**: Provides the structure and content of the website.
-* **Tailwind CSS**: Styles the website for an engaging user experience.
+* **HTML**: Provides the structure and content of the website.
+* **Tailwind CSS**: Animation Library for an engaging user experience.
+* **GSAP**: Styles the website for an engaging user experience.
 * **JavaScript**: Enhances interactivity, including real-time updates and dynamic search capabilities.
 * **News API**: Fetches news articles to keep content updated.
-
+  
 ## Setup Instruction
 
 1. Clone the Repository: https://github.com/utkarsh2035/News-Website.git
