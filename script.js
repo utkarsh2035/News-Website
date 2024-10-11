@@ -8,7 +8,7 @@ if (nav) {
   });
 }
 
-const apiKey = "8307cd8890aa456c99c39746f6bb9110";
+const apiKey = "41827f0597f94d04bbbae1404a992153";
 const url = "https://newsapi.org/v2/everything?q=";
 
 window.addEventListener("load", () => {
@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
 async function fetchNews(query) {
   const startDate = "2024-09-01";
   const res = await fetch(
-    `${url}${query}&from=${startDate}&sortBy=publishedAt&apiKey=${apiKey}`
+    `${url}${query}&from=$&sortBy=publishedAt&apiKey=${apiKey}`
   );
   const data = await res.json();
   bindData(data.articles);
@@ -102,3 +102,4 @@ searchBtn.addEventListener("click", () => {
 function reload() {
   window.location.reload();
 }
+
