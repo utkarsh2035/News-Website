@@ -1,40 +1,62 @@
-# BuzzScope News-Website
-Get the latest tech news in one place with BuzzScope Tech News! This site curates top stories directly, keeping tech enthusiasts updated without the need to search multiple websites.
+# 🚀 BuzzScope – React News Website
 
-## Tired of:
-* Spending time on irrelevant articles?
-* Struggling to find in-depth coverage of the topics that matter to you?
-* Juggling multiple websites to stay informed?
+BuzzScope brings you the latest news from around the world — in one place.  
+This site curates top stories via the News API, keeping you informed without visiting multiple websites — now rebuilt with **React** for a smooth, modern experience.
 
-## With BuzzScope TECH NEWS, you get:
-* Curated Content: We hand-pick the best tech stories, saving you precious time.
-* Easy Exploration: Dive deep or browse by topic—it's your call.
-* Stay Informed, Effortlessly: Get your daily dose of tech news, wherever you are.
+---
 
- 
- ![Screenshot 2024-09-19 002946](https://github.com/user-attachments/assets/c24c5650-0fc6-4e2d-9161-a51435d98749)
+## 😩 Tired of:
+- Spending time on irrelevant articles?
+- Struggling to find in-depth coverage of the topics that matter to you?
+- Juggling multiple websites to stay informed?
 
- ## Features
- * Tech Insights at Your Fingertips: Stay updated with the latest tech news.
- * Search Functionality: Search for news articles by entering keywords.
-*  Responsive Design: Ensures the website looks great on all devices.
+---
 
- ## Technologies Used
-* **HTML**: Provides the structure and content of the website.
-* **Tailwind CSS**: Animation Library for an engaging user experience.
-* **GSAP**: Styles the website for an engaging user experience.
-* **JavaScript**: Enhances interactivity, including real-time updates and dynamic search capabilities.
-* **News API**: Fetches news articles to keep content updated.
-  
-## Setup Instruction
+## 🎯 With BuzzScope, you get:
+- ✨ **Curated Content:** Top stories delivered to you — save time & effort.
+- 🔍 **Easy Exploration:** Browse by topic or search for what interests you.
+- 📱 **Stay Informed, Effortlessly:** Responsive, fast, and accessible anywhere.
 
-1. Clone the Repository: https://github.com/utkarsh2035/News-Website.git
-2. Open index.html in your web browser.
- 
- ## How to Use
- * Enter keywords related to tech news in the search bar and press 'Search'
- * Browse through the latest articles displayed on the main page.
-       
-  Thank You!
-  
-  Developed By- Utkarsh Rawat
+---
+
+## 📸 Screenshot
+![Screenshot](https://github.com/user-attachments/assets/c24c5650-0fc6-4e2d-9161-a51435d98749)
+
+---
+
+## 🚀 Features
+- ✅ Tech & General News at Your Fingertips  
+- ✅ Search Functionality: Search for news articles by keyword  
+- ✅ Responsive Design: Works seamlessly on all devices  
+- ✅ Smooth Animations: Built with GSAP & Lenis for a delightful user experience  
+- ✅ Cursor animation and topic highlighting  
+- ✅ React Component Architecture for better scalability  
+
+---
+
+## 🧪 Technologies Used
+| Technology       | Purpose                                   |
+|-------------------|-------------------------------------------|
+| ⚛️ React         | Component-based UI framework             |
+| 🎨 Tailwind CSS   | Utility-first CSS framework             |
+| 🌀 GSAP           | Animation library for smooth effects    |
+| 🛞 Lenis          | Smooth scrolling experience             |
+| 📡 News API       | Fetch live news articles               |
+| ✍️ JavaScript     | Dynamic logic & interactivity          |
+
+---
+
+## 🛠️ Setup Instructions
+
+### 📥 Clone the Repository
+```bash
+git clone https://github.com/utkarsh2035/News-Website.git
+cd News-Website
+
+### 📥 Install Dependencies
+```bash
+npm install
+
+### 📥 Start the Development Server
+```bash
+npm run dev
