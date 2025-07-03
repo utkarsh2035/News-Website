@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@tailwind utilities;
+
+.boxShadow{
+    box-shadow: 0 0 10px 4px rgba(57, 255, 20, 0.7);
+}
+.body{
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
