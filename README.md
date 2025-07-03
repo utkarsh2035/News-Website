@@ -52,10 +52,12 @@ This site curates top stories via the News API, keeping you informed without vis
 ```bash
 git clone https://github.com/utkarsh2035/News-Website.git
 cd News-Website
+```
 
 ### 📥 Install Dependencies
 ```bash
 npm install
+```
 
 ### 📥 Start the Development Server
 ```bash
