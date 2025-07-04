@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useRef, useState, useEffect } from "react";
 import "./output.css";
+import "./App.css";
 import gsap from "gsap";
 import Lenis from "@studio-freight/lenis";
 import NewsCard from "./components/NewsCard";
@@ -90,15 +91,20 @@ const App = () => {
   }, []);
 
   const fetchNews = async (query) => {
-    const res = await fetch(`${url}${apiKey}&q=${encodeURIComponent(query)}`);
+    const res = await fetch(
+      `${url}${apiKey}` +
+      `&q=${encodeURIComponent(query)}` +
+      `&language=en`
+    );
     const data = await res.json();
-    const mapped = (data.results || []).map(item => ({
-      urlToImage:   item.image_url,
-      url:          item.link,
-      publishedAt:  item.pubDate,
-      source:       { name: item.source_id },
-      title:        item.title,
-      description:  item.description
+    const withImages = (data.results || []).filter(item => item.image_url);
+    const mapped = withImages.map(item => ({
+      urlToImage:  item.image_url,
+      url:         item.link,
+      publishedAt: item.pubDate,
+      source:      { name: item.source_id },
+      title:       item.title,
+      description: item.description
     }));
 
     setArticles(mapped || []);
