@@ -17,8 +17,8 @@ const App = () => {
   const searchBtnRef = useRef(null);
   const cursorRef = useRef(null);
 
-  const apiKey = "41827f0597f94d04bbbae1404a992153";
-  const url = "https://newsapi.org/v2/everything?q=";
+  const apiKey = "pub_564616650f6fcb472d4e1f5d53c8935323abf";
+  const url = "https://newsdata.io/api/1/latest?apikey=";
 
   useEffect(() => {
     document.body.classList.add("overflow-x-hidden");
@@ -90,11 +90,18 @@ const App = () => {
   }, []);
 
   const fetchNews = async (query) => {
-    const res = await fetch(
-      `${url}${query}&sortBy=publishedAt&pageSize=30&page=1&apiKey=${apiKey}`
-    );
+    const res = await fetch(`${url}${apiKey}&q=${encodeURIComponent(query)}`);
     const data = await res.json();
-    setArticles(data.articles || []);
+    const mapped = (data.results || []).map(item => ({
+      urlToImage:   item.image_url,
+      url:          item.link,
+      publishedAt:  item.pubDate,
+      source:       { name: item.source_id },
+      title:        item.title,
+      description:  item.description
+    }));
+
+    setArticles(mapped || []);
   };
 
   const handleCategoryClick = (category) => {
