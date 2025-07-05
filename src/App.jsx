@@ -146,11 +146,11 @@ const App = () => {
               key={cat}
               ref={(el) => (itemsRef.current[i] = el)}
               onClick={() => handleCategoryClick(cat)}
-              className={cursor-pointer transition-all ${
+              className={`cursor-pointer transition-all ${
                 activeCategory === cat
                   ? "highlight border-b-2 border-sky-400"
                   : ""
-              }}
+              }`}
             >
               {cat}
             </p>
