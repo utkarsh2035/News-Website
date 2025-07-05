@@ -8,30 +8,28 @@ const formatTimestamp = (isoTimestamp) => {
 const NewsCard = ({ article }) => {
   return (
     <div
-      className="image-box h-full w-full sm:w-80 md:w-96 bg-slate-900/10 backdrop-blur-sm ml-0 md:ml-4 mt-8 flex flex-col gap-4 cursor-pointer"
+      className="image-box h-full w-96 bg-slate-900/10 backdrop-blur-sm ml-4 mt-8 flex flex-col gap-4 cursor-pointer"
       onClick={() => window.open(article.url, "_blank")}
     >
       <div className="h-60 overflow-hidden">
         <img
           src={article.urlToImage}
-          alt="News"
+          alt=""
           className="card-image object-cover h-full w-full aspect-auto"
         />
       </div>
 
-      <div className="px-4">
-        <h1 className="card-title font-sans font-bold text-base md:text-xl">
-          {article.title}
-        </h1>
+      <div className="ml-4 mr-4">
+        <h1 className="card-title font-sans font-bold text-xl">{article.title}</h1>
       </div>
 
-      <div className="px-4 text-xs md:text-sm font-light">
+      <div className="ml-4 mr-4 text-sm font-light">
         <p className="card-info">
           {article.source.name} - {formatTimestamp(article.publishedAt)}
         </p>
       </div>
 
-      <div className="px-4 text-sm md:text-base font-normal">
+      <div className="ml-4 mr-4 text-lg font-normal">
         <p className="news-para">{article.description}</p>
       </div>
     </div>
