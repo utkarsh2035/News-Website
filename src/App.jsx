@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState, useEffect } from "react";
+ import React, { useLayoutEffect, useRef, useState, useEffect } from "react";
 import "./output.css";
 import "./App.css";
 import gsap from "gsap";
@@ -92,16 +92,18 @@ const App = () => {
 
   const fetchNews = async (query) => {
     const res = await fetch(
-      `${url}${apiKey}&q=${encodeURIComponent(query)}&language=en`
+      ${url}${apiKey} +
+      &q=${encodeURIComponent(query)} +
+      &language=en
     );
     const data = await res.json();
     const withImages = (data.results || []).filter(item => item.image_url);
     const mapped = withImages.map(item => ({
-      urlToImage: item.image_url,
-      url: item.link,
+      urlToImage:  item.image_url,
+      url:         item.link,
       publishedAt: item.pubDate,
-      source: { name: item.source_id },
-      title: item.title,
+      source:      { name: item.source_id },
+      title:       item.title,
       description: item.description
     }));
 
@@ -129,57 +131,56 @@ const App = () => {
         className="cursor h-3 w-3 rounded-full bg-sky-400 fixed top-0 left-0 z-20 boxShadow"
       ></div>
 
- <nav className="w-full bg-slate-900 flex flex-wrap md:flex-nowrap justify-between items-center fixed backdrop-blur-md font-sans z-10 px-4 py-2 gap-4">
-  <div className="h-12 md:h-16 flex-shrink-0">
-    <img
-      ref={navImgRef}
-      src="/newsLogo.jpeg"
-      alt="BuzzScope Logo"
-      className="h-full w-auto rounded-lg"
-      onClick={reload}
-    />
-  </div>
+      <nav className="h-20 w-full bg-slate-900 flex justify-between items-center fixed backdrop-blur-md font-sans z-10">
+        <div className="h-16 overflow-hidden pl-20">
+          <img
+            ref={navImgRef}
+            src="/newsLogo.jpeg" 
+            alt="BuzzScope Logo"
+            className="object-cover h-full w-full aspect-auto object-center rounded-lg"
+            onClick={reload}
+          />
+        </div>
 
-  <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
-    {categories.map((cat, i) => (
-      <p
-        key={cat}
-        ref={(el) => (itemsRef.current[i] = el)}
-        onClick={() => handleCategoryClick(cat)}
-        className={`cursor-pointer transition-all ${
-          activeCategory === cat
-            ? "highlight border-b-2 border-sky-400"
-            : ""
-        }`}
-      >
-        {cat}
-      </p>
-    ))}
-  </div>
+        <div className="items flex justify-between items-center gap-10 text-lg">
+          {categories.map((cat, i) => (
+            <p
+              key={cat}
+              ref={(el) => (itemsRef.current[i] = el)}
+              onClick={() => handleCategoryClick(cat)}
+              className={cursor-pointer transition-all ${
+                activeCategory === cat
+                  ? "highlight border-b-2 border-sky-400"
+                  : ""
+              }}
+            >
+              {cat}
+            </p>
+          ))}
+        </div>
 
-  <div className="flex flex-wrap sm:flex-nowrap gap-2 md:gap-4 w-full md:w-auto">
-    <input
-      type="search"
-      value={searchQuery}
-      onChange={(e) => setSearchQuery(e.target.value)}
-      ref={searchbarRef}
-      id="searchbar"
-      className="border-2 border-sky-400 flex-grow md:flex-grow-0 md:w-64 rounded-lg py-1 px-2 font-light bg-transparent"
-      placeholder="e.g. Science"
-    />
-    <button
-      type="button"
-      onClick={handleSearch}
-      ref={searchBtnRef}
-      className="border-2 border-sky-400 py-1 px-2 rounded-lg bg-sky-400 text-slate-950 font-bold"
-    >
-      Search
-    </button>
-  </div>
-</nav>
+        <div className="searchbarflex pr-20">
+          <input
+            type="search"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            ref={searchbarRef}
+            id="searchbar"
+            className="border-2 border-sky-400 w-64 rounded-lg pt-1 pl-2 pr-2 pb-1 font-light bg-transparent mr-4"
+            placeholder="e.g. Science"
+          />
+          <button
+            type="button"
+            onClick={handleSearch}
+            ref={searchBtnRef}
+            className="border-2 border-sky-400 pb-1 pt-1 pl-2 pr-2 rounded-lg bg-sky-400 text-slate-950 font-bold"
+          >
+            Search
+          </button>
+        </div>
+      </nav>
 
-
-      <div className="pt-28 flex flex-wrap justify-center gap-4">
+      <div className="pt-20 flex flex-wrap justify-center">
         {articles.length === 0 ? (
           <p className="text-xl mt-10">No articles found.</p>
         ) : (
