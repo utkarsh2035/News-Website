@@ -92,9 +92,7 @@ const App = () => {
 
   const fetchNews = async (query) => {
     const res = await fetch(
-      ${url}${apiKey} +
-      &q=${encodeURIComponent(query)} +
-      &language=en
+      `${url}${apiKey}&q=${encodeURIComponent(query)}&language=en`
     );
     const data = await res.json();
     const withImages = (data.results || []).filter(item => item.image_url);
